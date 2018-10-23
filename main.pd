@@ -1,0 +1,5 @@
+#N canvas 0 23 450 300 10;
+#N canvas 490 185 450 300 stuff 0;
+#X restore 76 128 pd stuff;
+#X obj 76 183 receive-two-dac-channels;
+#X obj 78 154 record-right-tracks;

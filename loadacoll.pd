@@ -1,0 +1,11 @@
+#N canvas 519 404 427 209 10;
+#X floatatom 152 63 5 0 0 0 - - -, f 5;
+#X obj 152 108 outlet;
+#X obj 152 36 inlet;
+#X obj 152 84 coll \$1;
+#C restore;
+#X obj 286 39 inlet;
+#X connect 0 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;

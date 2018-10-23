@@ -1,0 +1,10 @@
+#N canvas 501 941 450 300 10;
+#X obj 101 93 dac~;
+#X text 57 9 toprow-column1;
+#X text 204 8 toprow-col2;
+#X text 40 36 secondrow-column1;
+#X text 169 36 secondrow-column2;
+#X obj 101 63 r~ left;
+#X obj 223 64 r~ right;
+#X connect 5 0 0 0;
+#X connect 6 0 0 1;
