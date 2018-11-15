@@ -1,0 +1,188 @@
+* Microtonal-abstractions
+
+** Introduction
+
+This name is a complete misnomer.
+
+These patches began with one focus but became about modeling a sequencer in order to work with and play back patterns that mimic the Volca beats drum machine.
+
+But along the way toward that goal another reality dawned, which is that playing patterns "into" the microtonally-tuned Motif patches produced interesting results.
+
+So the dilemma of using clojure to "script into" Pure Data templates versus using Pd automatic patch creation arises.
+
+The existing sequencer-abstraction.pd file has a lot that works nicely, but also offers a great opportunity to scale up the level of abstraction to be able to actually work more "within" Pd to make these abstractions both more idiomatic to Pure Data as well as, most importantly, more flexible.
+
+
+
+** What are the abstractions?
+
+
+*** sequencer-abstraction
+| ├── | sequencer-abstraction.pd          |     |       |
+| ├── | sequencer-abstraction1.pd         |     |       |
+| ├── | sequencer-abstraction10.pd        |     |       |
+| ├── | sequencer-abstraction11.pd        |     |       |
+| ├── | sequencer-abstraction12.pd        |     |       |
+| ├── | sequencer-abstraction13.pd        |     |       |
+| ├── | sequencer-abstraction14.pd        |     |       |
+| ├── | sequencer-abstraction15.pd        |     |       |
+| ├── | sequencer-abstraction16.pd        |     |       |
+| ├── | sequencer-abstraction2.pd         |     |       |
+| ├── | sequencer-abstraction3.pd         |     |       |
+| ├── | sequencer-abstraction4.pd         |     |       |
+| ├── | sequencer-abstraction5.pd         |     |       |
+| ├── | sequencer-abstraction6.pd         |     |       |
+| ├── | sequencer-abstraction7.pd         |     |       |
+| ├── | sequencer-abstraction8.pd         |     |       |
+| ├── | sequencer-abstraction9.pd         |     |       |
+
+
+*** seq-pattern-abstraction
+| ├── | seq-pattern-abstraction1.pd       |     |       |
+| ├── | seq-pattern-abstraction10.pd      |     |       |
+| ├── | seq-pattern-abstraction11.pd      |     |       |
+| ├── | seq-pattern-abstraction12.pd      |     |       |
+| ├── | seq-pattern-abstraction13.pd      |     |       |
+| ├── | seq-pattern-abstraction14.pd      |     |       |
+| ├── | seq-pattern-abstraction15.pd      |     |       |
+| ├── | seq-pattern-abstraction16.pd      |     |       |
+| ├── | seq-pattern-abstraction2.pd       |     |       |
+| ├── | seq-pattern-abstraction3.pd       |     |       |
+| ├── | seq-pattern-abstraction4.pd       |     |       |
+| ├── | seq-pattern-abstraction5.pd       |     |       |
+| ├── | seq-pattern-abstraction6.pd       |     |       |
+| ├── | seq-pattern-abstraction7.pd       |     |       |
+| ├── | seq-pattern-abstraction8.pd       |     |       |
+| ├── | seq-pattern-abstraction9.pd       |     |       |
+
+
+*** scale-durations-abstraction
+| ├── | scale-durations-abstraction1.pd   |     |       |
+| ├── | scale-durations-abstraction10.pd  |     |       |
+| ├── | scale-durations-abstraction11.pd  |     |       |
+| ├── | scale-durations-abstraction12.pd  |     |       |
+| ├── | scale-durations-abstraction13.pd  |     |       |
+| ├── | scale-durations-abstraction14.pd  |     |       |
+| ├── | scale-durations-abstraction15.pd  |     |       |
+| ├── | scale-durations-abstraction16.pd  |     |       |
+| ├── | scale-durations-abstraction2.pd   |     |       |
+| ├── | scale-durations-abstraction3.pd   |     |       |
+| ├── | scale-durations-abstraction4.pd   |     |       |
+| ├── | scale-durations-abstraction5.pd   |     |       |
+| ├── | scale-durations-abstraction6.pd   |     |       |
+| ├── | scale-durations-abstraction7.pd   |     |       |
+| ├── | scale-durations-abstraction8.pd   |     |       |
+| ├── | scale-durations-abstraction9.pd   |     |       |
+
+
+*** duration abstractions
+| ├── | duration-abstraction1.pd          |     |       |
+| ├── | duration-abstraction10.pd         |     |       |
+| ├── | duration-abstraction11.pd         |     |       |
+| ├── | duration-abstraction12.pd         |     |       |
+| ├── | duration-abstraction13.pd         |     |       |
+| ├── | duration-abstraction14.pd         |     |       |
+| ├── | duration-abstraction15.pd         |     |       |
+| ├── | duration-abstraction16.pd         |     |       |
+| ├── | duration-abstraction2.pd          |     |       |
+| ├── | duration-abstraction3.pd          |     |       |
+| ├── | duration-abstraction4.pd          |     |       |
+| ├── | duration-abstraction5.pd          |     |       |
+| ├── | duration-abstraction6.pd          |     |       |
+| ├── | duration-abstraction7.pd          |     |       |
+| ├── | duration-abstraction8.pd          |     |       |
+| ├── | duration-abstraction9.pd          |     |       |
+| ├── | durations-library.pd              |     |       |
+| ├── | durations1.txt                    |     |       |
+
+
+*** note-instrument-abstractions
+| ├── | note-instrument-abstraction1.pd   |     |       |
+| ├── | note-instrument-abstraction10.pd  |     |       |
+| ├── | note-instrument-abstraction11.pd  |     |       |
+| ├── | note-instrument-abstraction12.pd  |     |       |
+| ├── | note-instrument-abstraction13.pd  |     |       |
+| ├── | note-instrument-abstraction14.pd  |     |       |
+| ├── | note-instrument-abstraction15.pd  |     |       |
+| ├── | note-instrument-abstraction16.pd  |     |       |
+| ├── | note-instrument-abstraction2.pd   |     |       |
+| ├── | note-instrument-abstraction3.pd   |     |       |
+| ├── | note-instrument-abstraction4.pd   |     |       |
+| ├── | note-instrument-abstraction5.pd   |     |       |
+| ├── | note-instrument-abstraction6.pd   |     |       |
+| ├── | note-instrument-abstraction7.pd   |     |       |
+| ├── | note-instrument-abstraction8.pd   |     |       |
+| ├── | note-instrument-abstraction9.pd   |     |       |
+
+
+** What is "uncategorized?"
+
+
+*** for processing and organizing
+
+All the subpatches that make up sequencer-abstraction, including numerous patches that have a single number difference that sets them apart:
+
+#+BEGIN_SRC sh
+tree .
+#+END_SRC
+
+#+RESULTS:
+
+| ├── | 31-note-tetrachords.pd            |     |       |
+| ├── | a-voice.pd                        |     |       |
+| ├── | a-voice2.pd                       |     |       |
+| ├── | abstract-bendout.pd               |     |       |
+| ├── | all-16-duration-abstractions.pd   |     |       |
+| ├── | bang-sine-envelope.pd             |     |       |
+| ├── | bigunpack.pd                      |     |       |
+| ├── | constantly-read-table.pd          |     |       |
+| ├── | eight-voices.pd                   |     |       |
+| ├── | four-part-MIDI-31-out.pd          |     |       |
+| ├── | getacoll.pd                       |     |       |
+| ├── | loadacoll.pd                      |     |       |
+| ├── | loadcolldata.pd                   |     |       |
+| ├── | local-documentation.pd            |     |       |
+| ├── | main.pd                           |     |       |
+| ├── | making-notes-utility-template.pd  |     |       |
+| ├── | making-notes-utility-template2.pd |     |       |
+| ├── | noteouts-please.pd                |     |       |
+| ├── | orchestra-abstraction.pd          |     |       |
+| ├── | patterns-and-sequences.pd         |     |       |
+| ├── | random-arrays.pd                  |     |       |
+| ├── | receive-two-dac-channels.pd       |     |       |
+| ├── | record-right-tracks.pd            |     |       |
+| ├── | seq-patterns-utility-template.pd  |     |       |
+| ├── | set-durations-scratch.pd          |     |       |
+| ├── | set-notes-template.pd             |     |       |
+| ├── | set-sixteen-note-instruments.pd   |     |       |
+| ├── | simple-call.pd                    |     |       |
+| ├── | sine-interval-abstractions.pd     |     |       |
+
+
+** non-pd (data and resources)
+
+The form here is for loading into a ~coll~ object
+[[file:~/repos/post-tonal-overtone/resources/patterns7.txt][file:~/repos/post-tonal-overtone/resources/patterns7.txt]]
+
+The format here is for doing k-v lookup?:
+[[file:~/repos/post-tonal-overtone/resources/hope-lookup.txt][file:~/repos/post-tonal-overtone/resources/hope-lookup.txt]]
+
+post-tonal-overtone/resources/hope-lookup.txt
+
+| ├── | org-babel-for-pd.org              |     |       |
+| ├── | mycoll.txt                        |     |       |
+| ├── | notenames.txt                     |     |       |
+| ├── | slow-decay-envelope.txt           |     |       |
+| ├── | stuff.txt                         |     |       |
+| ├── | stuff2.txt                        |     |       |
+| ├── | stuff3.txt                        |     |       |
+| └── | stuff4.txt                        |     |       |
+| ├── | patterns7.txt                     |     |       |
+| ├── | sample.txt                        |     |       |
+| ├── | README.org                        |     |       |
+| ├── | instruments1.txt                  |     |       |
+| ├── | intervals.csv                     |     |       |
+| ├── | intervals.tsv                     |     |       |
+| ├── | intervals.txt                     |     |       |
+
+| ├── | intervals.wav                     |     |       |
